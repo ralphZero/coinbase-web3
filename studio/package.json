@@ -14,6 +14,9 @@
     "sanity"
   ],
   "dependencies": {
+    "@3rdweb/hooks": "^1.8.0",
+    "@3rdweb/react": "^1.8.1",
+    "@3rdweb/sdk": "^1.36.11",
     "@sanity/base": "^2.25.1",
     "@sanity/core": "^2.25.0",
     "@sanity/default-layout": "^2.25.1",
