@@ -17,6 +17,7 @@ a {
 .sidebar_item {
   color: #ffffff !important;
   transition: all .1s ease-in;
+  z-index: 0 !important;
 }
 .sidebar_item:hover {
   color: #0d6efd !important;
@@ -32,4 +33,50 @@ a {
 .overflow-y-scroll {
   overflow-x: hidden;
   overflow-y: auto !important;
+}
+.custom-nav {
+  border: none !important;
+}
+.custom-nav-item {
+  border-color: #6c757d !important;
+  border: none !important;
+  border-bottom: 1px solid #6c757d !important;
+  color: #f0f0f0 !important;
+  background-color: #1f2225 !important;
+  border-radius: 0px !important;
+}
+.custom-nav-item:hover {
+  background-color: #181a1d !important;
+  color: #fff !important;
+}
+
+.nav-item:nth-child(1) a.custom-nav-item{
+  border-left: none !important;
+  border-right: 1px solid #6c757d !important;
+}
+.nav-item:nth-child(2) a.custom-nav-item{
+  border-left: 0px solid #6c757d !important;
+  border-right: none !important;
+}
+
+.custom-nav-item.active{
+  color:#0d6efd !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

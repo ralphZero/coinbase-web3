@@ -5,9 +5,33 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Modal from 'react-modal';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import TransferModal from './modal/TransferModal';
+
+Modal.setAppElement('#__next');
 
 
 const Header = ({ walletAddress }) => {
+
+    const router = useRouter();
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            transform: 'translate(-50%, -50%)',
+            backgroudColor: '#0a0b0d',
+            padding: 0,
+            border: 'none',
+        },
+        overlay: {
+            backgroundColor: 'rgba(10,11,13,0.75)'
+        }
+    }
+
     return (
         <Navbar id='navbar' className="border-bottom border-secondary" bg='dark' variant='dark'>
             <Container>
@@ -21,9 +45,15 @@ const Header = ({ walletAddress }) => {
                         <Row className='text-secondary'>{walletAddress.slice(0, 5)+'...'+walletAddress.slice(walletAddress.length - 4)}</Row>
                     </Col>
                     <Button>Buy / Sell</Button>
-                    <Button variant='outline-light'>Send / Receive</Button>
+                    {/* eslint-disable-next-line @next/next/link-passhref*/}
+                    <Link href={'/?transfer=1'} passHref={false}>
+                        <Button variant='outline-light'>Send / Receive</Button>
+                    </Link>
                 </Form>
             </Container>
+            <Modal style={customStyles} isOpen={!!router.query.transfer} onRequestClose={() => router.push('/')}>
+                <TransferModal />
+            </Modal>
         </Navbar>
     );
 }
