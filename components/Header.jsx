@@ -26,6 +26,7 @@ const Header = ({ walletAddress }) => {
             backgroudColor: '#0a0b0d',
             padding: 0,
             border: 'none',
+            height: 'fit-content',
         },
         overlay: {
             backgroundColor: 'rgba(10,11,13,0.75)'

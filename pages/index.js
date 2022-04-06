@@ -4,16 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Head from 'next/head'
 
 export default function Home() {
   const { address, connectWallet } = useWeb3();
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"/>
-      </Head>
       <Container fluid className='bg-dark vh-100 overflow-hidden'>
       { address ? (
           <Dashboard address={address} />
